@@ -1,10 +1,18 @@
 class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
-        hashset=set()
-        for i in nums:
-            if i in hashset:
+    def containsDuplicate(self, arr: List[int]) -> bool:
+        n = len(arr)
+
+    # Create a set to store the unique elements
+        st = set()
+
+    # Iterate through each element
+        for i in range(n):
+            if arr[i] in st:
                 return True
-            hashset.add(i)
+            else:
+                st.add(arr[i])
+
+    # If no duplicates are found, return false
         return False
     
 

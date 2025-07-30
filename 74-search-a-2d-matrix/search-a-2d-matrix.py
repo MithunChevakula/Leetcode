@@ -7,10 +7,11 @@ class Solution:
             mid = (low + high) // 2
             targetRow = mid // col
             targetCol = mid % col
+            middle=matrix[targetRow][targetCol]
 
-            if matrix[targetRow][targetCol] == target:
+            if middle== target:
                 return True
-            elif matrix[targetRow][targetCol] > target:
+            elif middle> target:
                 high = mid - 1
             else:
                 low = mid + 1

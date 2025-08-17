@@ -1,10 +1,10 @@
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        fast = slow = head
-        
-        while fast and fast.next:
-            slow, fast = slow.next, fast.next.next
-            if fast == slow:
+        visited=set()
+        temp=head
+        while temp:
+            if temp in visited:
                 return True
-        
+            visited.add(temp)
+            temp=temp.next
         return False

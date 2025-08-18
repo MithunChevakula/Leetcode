@@ -17,9 +17,23 @@ class Solution:
         #     slow = slow.next
 
         # return True
+
+        # temp=head
+        # arr=[]
+        # while temp:
+        #     arr.append(temp.val)
+        #     temp=temp.next
+        # return arr==arr[::-1]
+
         temp=head
-        arr=[]
+        stack=[]
         while temp:
-            arr.append(temp.val)
+             stack.append(temp.val)
+             temp=temp.next
+
+        temp=head
+        while temp:
+            if temp.val!=stack.pop():
+                return False
             temp=temp.next
-        return arr==arr[::-1]
+        return True

@@ -1,10 +1,13 @@
 class Solution:
     def nextGreaterElement(self,nums1, nums2):
-        next_greater = {}
-        stack = []
-        for num in nums2:
-            while stack and stack[-1] < num:
-                smaller = stack.pop()
-                next_greater[smaller] = num
-            stack.append(num)
-        return [next_greater.get(x, -1) for x in nums1]
+        ans=[]
+        for num in nums1:
+            index=nums2.index(num)
+            next_greater=-1
+            for i in range(index+1,len(nums2)):
+                if nums2[i]>num:
+                    next_greater=nums2[i]
+                    break
+            ans.append(next_greater)
+        return ans
+

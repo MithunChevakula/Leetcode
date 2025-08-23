@@ -3,7 +3,7 @@ class Solution:
         ans=[]
         index=0
         for i in range(1,n+1):
-            if i==target[index]:
+            if index<len(target) and i==target[index]:
                 ans.append("Push")
                 index+=1
             else:
